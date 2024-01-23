@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>study Hub</title>
+    <!-- <script type="module" src="checkauth.js"></script> -->
+    <script type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- <script type="module" defer>
+      import { checkAuth } from './check-auth.js';
+      checkAuth();
+    </script> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap"
+      rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/a00c7aaab4.js"></script>
+    <script type="module"
+      src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+    <script type="module"
+      src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
+      
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style_index.css">
+    <link rel="stylesheet" href="footer.css">
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+
+      <!-- <div class="alert alert-primary" role="alert">
+        A simple primary alert with <a href="login.html" class="alert-link">login
+          link</a>. ignore if already done.
+        <button type="button" class="btn-close" data-bs-dismiss="alert"
+          aria-label="Close"></button>
+      </div> -->
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Study Hub</a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+              style="--bs-scroll-height: 100px;">
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Upload/View
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" id="sem1">I SEM</a></li>
+
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" id="sem2">II SEM</a></li>
+
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Blogs
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" id="view_blog">View Blogs</a></li>
+
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" id="publish_blog">Publish Blogs</a></li>
+
+                </ul>
+              </li>
+              <!-- upload files by users  -->
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Resources
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="
+                    https://drive.google.com/drive/folders/1_83MvND0Mpvxp5uUpXSlmjRzE5d20CIo?usp=sharing
+                    ">I SEM</a></li>
+                  <li><a class="dropdown-item" href="
+                    https://drive.google.com/drive/folders/1OBoJFRG7HuRA3G-jxJ9OMCX7QQejXKpS?usp=sharing">II
+                      SEM</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item"
+                      href="https://drive.google.com/drive/folders/100bBfT4vXRndEZtl9tGv1NJQ92h2BJf_?usp=drive_link, _blank">
+                      Books
+                    </a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about1.html">about</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contactus.html">contact us</a>
+              </li>
+
+              <!-- for uploading files -->
+              <!-- <li class="nav-item">
+                <button type="button" class="btn btn-primary" id="uploadFilesButton"
+      onclick="showUpload()">Upload files</button>
+              </li> -->
+
+              <!-- buton trigger modal for log in  -->
+              <!-- <button type="button" class="btn btn-primary" id="loginButton" data-bs-toggle="modal" data-bs-target="#loginModal">
+            Login
+          </button> -->
+              <!-- <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search"
+                  placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form> -->
+
+              <!-- Button trigger modal for sign up -->
+              <!-- <button type="button" onclick="window.open('signupp.html', '_blank')" class="btn btn-primary sign1" id="signupButton" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Login
+              </button> -->
+              <li class="nav-item">
+                <a class="nav-link" href="signupp.html">login</a>
+              </li>
+              <div class="search d-none d-lg-block">
+                <input type="text" id="username" placeholder="search">
+                <a href>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                    fill="black" class="bi bi-search" viewBox="0 0 16 16">
+                    <path
+                      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                  </svg>
+                </a>
+              </div>
+
+              <!-- Login Modal -->
+              <div class="modal fade" id="loginModal" tabindex="-1"
+                aria-labelledby="loginModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="loginModalLabel">Login
+                        Form</h1>
+                      <button type="button" class="btn-close"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="container my-5">
+                        <form id="loginForm">
+                          <!-- Email input -->
+                          <div class="mb-3">
+                            <label for="exampleInputEmail2" class="form-label">Email
+                              address</label>
+                            <input type="email" class="form-control"
+                              id="exampleInputEmail2" required
+                              aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never
+                              share your email with anyone else.</div>
+                          </div>
+
+                          <!-- Password input -->
+                          <div class="mb-3">
+                            <label for="exampleInputPassword2"
+                              class="form-label">Password</label>
+                            <div class="input-group">
+                              <input type="password" class="form-control"
+                                id="exampleInputPassword2" required>
+                              <button type="button"
+                                class="btn btn-outline-secondary"
+                                id="toggleLoginPasswordButton"
+                                onclick="togglePassword('exampleInputPassword2')">Show
+                                Password</button>
+                            </div>
+                          </div>
+
+                          <!-- Login button -->
+                          <button type="button" class="btn btn-primary"
+                            id="loginButton" onclick="logIn()">Login</button>
+                          <div id="form-link"><span><a href="forgot.html"
+                                class="link signup-link">forgot password?</a></span></div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <li class="nav-item">
+  <button class="nav-link btn btn-primary" onclick="displayUserProfile()">User Profile</button>
+</li> -->
+              <!-- <div id="user-info"></div>
+            <li class="nav-item ms-auto">
+              <i class="far fa-user" style="color: white; font-size: 24px;"></i>
+            </li> -->
+            </nav>
+
+            <div id="carouselExampleDark" class="carousel carousel-dark slide">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark"
+                  data-bs-slide-to="0" class="active"
+                  aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark"
+                  data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark"
+                  data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                  <img height="500px"
+                    src="https://cdn.wallpapersafari.com/33/89/m5nVuk.jpeg"
+                    class="d-block w-100" alt=" ...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <em>
+                      <h2>WELCOME</h2>
+                    </em>
+                    <p>to the library of btech hub</p>
+                    <!-- <button type="button" class="btn btn-primary"
+                    onclick="window.open('https://drive.google.com/drive/folders/100bBfT4vXRndEZtl9tGv1NJQ92h2BJf_?usp=drive_link', '_blank')">Learning
+                    Resources</button> -->
+                    <button type="button" class="btn btn-primary"
+                      id="uploadFilesButton"
+                      onclick="publishBlog()">Upload Blogs</button>
+
+                    <button type="button" onclick="showChat()"
+                      class="btn btn-danger" id="chatButton">Join Chat</button>
+                    <button type="button" onclick="viewBlog()"
+                      class="btn btn-success">View Blogs</button>
+                  </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                  <img height="500px"
+                    src="https://www.pixelstalk.net/wp-content/uploads/2016/08/Cool-nature-backgrounds-hd-resolution-1920x1080.jpg"
+                    class="d-block w-100" alt=" ...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h2>WELCOME</h2>
+                    <p>to the library of btech hub</p>
+
+                    <button type="button" class="btn btn-primary"
+                      id="uploadFilesButton"
+                      onclick="publishBlog()">Upload Blogs</button>
+
+                    <button type="button" onclick="showChat()"
+                      class="btn btn-danger" id="chatButton">Join Chat</button>
+                    <button type="button" onclick="viewBlog()"
+                      class="btn btn-success">View Blogs</button>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img height="500px"
+                    src="https://2.bp.blogspot.com/-KpHW4-zOauU/Tl8q7NJNEbI/AAAAAAAAHAs/AL5Zp_I6qfk/s1600/amazing+background+images-2.jpg width=300px"
+                    class="d-block w-100" alt=" ...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h2>WELCOME</h2>
+                    <p>to the library of study hub</p>
+
+                    <button type="button" class="btn btn-primary"
+                      id="uploadFilesButton"
+                      onclick="publishBlog()">Upload Blogs</button>
+
+                    <button type="button" onclick="showChat()"
+                      class="btn btn-danger" id="chatButton">Join Chat</button>
+                    <button type="button" onclick="viewBlog()"
+                      class="btn btn-success">View Blogs</button>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button"
+                data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button"
+                data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+
+          </div>
+
+          <div class="container my-4">
+
+            <div class="card-group">
+              <div class="card">
+                <img
+                  src="https://www.salonprivemag.com/wp-content/uploads/2021/07/write.jpg"
+                  class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Focused Study for Exams</h5>
+                  <p class="card-text">Ace your exams with a concentrated study
+                    on
+                    fundamental concepts. Develop strong
+                    problem-solving skills to confidently approach questions in
+                    your assessments.</p>
+                  <button type="button" class="btn btn-primary"
+                    onclick="window.open('focus.html','_blank')">FOCUS</button>
+                </div>
+              </div>
+              <div class="card">
+                <img
+                  src="https://www.thebluediamondgallery.com/wooden-tile/images/study.jpg"
+                  class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Efficient Exam Prep</h5>
+                  <p class="card-text">Streamline your skills for exams. Master
+                    essential concepts to confidently tackle
+                    questions in your assessments.</p>
+                  <button type="button" class="btn btn-success"
+                    onclick="window.open('exam_prep.html','_blank')">EXAM PREP</button>
+                </div>
+              </div>
+              <div class="card">
+                <img
+                  src="https://images.pexels.com/photos/267586/pexels-photo-267586.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                  height="248x"
+                  class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Foundational Exam Readiness</h5>
+                  <p class="card-text">Prepare for your exams with a
+                    comprehensive
+                    review of essential concepts. Strengthen your
+                    understanding across subjects to ensure success in your
+                    upcoming assessments.</p>
+                  <button type="button" class="btn btn-danger"
+                    onclick="window.open('foundation.html','_blank')">FOUNDATION</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script src="alert.js"></script>
+
+          <script type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+          <script
+            nomodulesrc="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+          <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+
+        </script>
+        <script type="module" src="signupp.js" defer></script>
+        <script type="module" src="login.js" defer></script>
+        <script src="signout.js"></script>
+        <footer class="footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+
+              </div>
+              <!-- <div class="col-md-6">
+              <ul class="list-inline social-icons">
+                <li class="list-inline-item">
+                  <a href="#" class="text-white"><ion-icon name="logo-github"></ion-icon></a>
+                </li>
+               <li class="list-inline-item">
+                    <a href="https://www.linkedin.com/in/dhruv-agrawal" class="text-white"><ion-icon name="logo-linkedin"></ion-icon></a>
+                  </li>
+                <li class="list-inline-item">
+                  <a href="https://www.instagram.com/dhruv.agarwal05?igsh=bXIzZ3RvdGE1bTRm&utm_source=qr" class="text-white"><ion-icon name="logo-instagram"></ion-icon></a>
+                </li>
+              </ul>
+            </div> -->
+            </div>
+          </div>
+        </footer>
+
+        <footer class="footer">
+          <div class="waves">
+            <div class="wave" id="wave1"></div>
+          </div>
+          <div class="col-md-6" id="placeicon">
+            <ul class="list-inline social-icons">
+              <li class="list-inline-item">
+                <a href="#" class="text-white"><ion-icon name="logo-github"></ion-icon></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.linkedin.com/in/dhruv-agrawal _blank"
+                  class="text-white"><ion-icon name="logo-linkedin"></ion-icon></a>
+              </li>
+              <li class="list-inline-item">
+                <a
+                  href="https://www.instagram.com/dhruv.agarwal05?igsh=bXIzZ3RvdGE1bTRm&utm_source=qr"
+                  class="text-white"><ion-icon name="logo-instagram"></ion-icon></a>
+              </li>
+            </ul>
+          </div>
+          <ul class="menu">
+            <li class="menu_item"><a class="menu_link" href="index.html">Home</a></li>
+            <li class="menu_item"><a class="menu_link" href="about1.html">About</a></li>
+            <li class="menu_item"><a class="menu_link" href="#">Services</a></li>
+            <li class="menu_item"><a class="menu_link" href="team1.html">Team</a></li>
+            <li class="menu_item"><a class="menu_link" href="contactus1.html">Contact</a></li>
+          </ul>
+          <p>&copy;2024 Study Hub. All Rights Reserved.</p>
+          <p>contact us : <a href="mailto:mradhruv460@gmail.com">@connect with
+              us</a></p>
+        </footer>
+
+      </body>
+    </html>
