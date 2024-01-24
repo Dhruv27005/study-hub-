@@ -1,4 +1,4 @@
-// view.js
+
 
 const firebaseConfig = {
     apiKey: 'AIzaSyB2SrD9CDZwYwfIepRs-RKHJI_lxIkhyxU',
