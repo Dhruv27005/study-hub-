@@ -1,0 +1,38 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #495057;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+section {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+h2 {
+    color: #343a40;
+}
+
+p {
+    line-height: 1.6;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.team-member img {
+    border-radius: 50%;
+    max-width: 100px;
+}
