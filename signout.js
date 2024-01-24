@@ -26,12 +26,12 @@ const firebaseConfig = {
           // Sign-out successful.
           console.log("User signed out");
           alert("confirm signing out");
-          Redirect to the login or home page as needed
-       const newUrl = window.location.origin + '/study-hub-/index.html'; 
-window.history.replaceState({}, document.title, newUrl);
-// Redirect to the home page or any other page after sign out
-window.location.href = newUrl;
-// window.location.href ='index.html';
+         
+//        const newUrl = window.location.origin + '/study-hub-/index.html'; 
+// window.history.replaceState({}, document.title, newUrl);
+// // Redirect to the home page or any other page after sign out
+// window.location.href = newUrl;
+window.location.href ='index.html';
 
         })
         .catch((error) => {
