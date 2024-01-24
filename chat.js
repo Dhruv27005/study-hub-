@@ -120,6 +120,7 @@ async function ask() {
             // Clear input fields after asking
             document.getElementById('question').value = '';
             fileInput.value = ''; // Clear file input
+             document.getElementById('username').value = '';
         } else {
             alert('This question already exists.');
         }
