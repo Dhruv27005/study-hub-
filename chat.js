@@ -77,7 +77,7 @@ function createQuestionDiv(questionId, questionData) {
     return questionDiv;
   }
   
-// ... (Rest of the code remains the same)
+
 
 // Function to ask a question
 async function ask() {
@@ -117,9 +117,9 @@ async function ask() {
             const questionDiv = createQuestionDiv(newQuestionId, newQuestionData);
             document.getElementById('questions-list').appendChild(questionDiv);
 
-            // Clear input fields after asking
+            // Clear input fields 
             document.getElementById('question').value = '';
-            fileInput.value = ''; // Clear file input
+            fileInput.value = ''; 
              document.getElementById('username').value = '';
         } else {
             alert('This question already exists.');
@@ -154,11 +154,11 @@ async function addAnswerToFirestore(questionId, username, answerText, file) {
     const answer = {
         username,
         answer: answerText,
-        fileUrl: null, // You can update this if you want to handle file attachments for answers
+        fileUrl: null,
     };
   
     if (file) {
-        // Handle file upload for answers here if needed
+       
         answer.fileUrl = await uploadFile(file);
     }
   
