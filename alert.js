@@ -24,3 +24,15 @@ function showChat(){
   }
   document.getElementById("sem1").addEventListener("click",sem1);
   document.getElementById("sem2").addEventListener("click",sem2);
+document.getElementById("semR1").addEventListener("click",semR1);
+  document.getElementById("semR2").addEventListener("click",semR2);
+  document.getElementById("booksR").addEventListener("click",booksR);
+  function semR1(){
+    alert("please sign up to view sem 1 study materials");
+  }
+  function semR2(){
+    alert("please sign up to view sem 2 study materials");
+  }
+  function booksR(){
+    alert("please sign up to view reference books");
+  }
