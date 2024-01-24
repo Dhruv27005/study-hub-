@@ -1,23 +1,36 @@
-
-
-
-
 const firebaseConfig = {
-    apiKey: "AIzaSyB2SrD9CDZwYwfIepRs-RKHJI_lxIkhyxU",
-    authDomain: "firbasebasics-656db.firebaseapp.com",
-    projectId: "firbasebasics-656db",
-    storageBucket: "firbasebasics-656db.appspot.com",
-    messagingSenderId: "578521796858",
-    appId: "1:578521796858:web:62bab59b8bd5826ee23943"
-};
-
+    apiKey: 'AIzaSyB2SrD9CDZwYwfIepRs-RKHJI_lxIkhyxU',
+    authDomain: 'firbasebasics-656db.firebaseapp.com',
+    projectId: 'firbasebasics-656db',
+    storageBucket: 'firbasebasics-656db.appspot.com',
+    messagingSenderId: '578521796858',
+    appId: '1:578521796858:web:036b3b72da2c9f85e23943'
+  };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
+// Get the saved username from localStorage
+let username = localStorage.getItem('username');
+
 document.addEventListener('DOMContentLoaded', () => {
-    fetchQuestions();
+    // If username is not saved, ask for it
+    if (!username) {
+        setUsername();
+    } else {
+        // If username is already saved, fetch questions
+        fetchQuestions();
+    }
 });
+
+async function setUsername() {
+    // Ask for the username and save it in localStorage
+    username = prompt("Enter your name:");
+    localStorage.setItem('username', username);
+
+    // Fetch questions after setting the username
+    fetchQuestions();
+}
 
 async function fetchQuestions() {
     const questionsList = document.getElementById('questions-list');
@@ -32,8 +45,6 @@ async function fetchQuestions() {
         questionsList.appendChild(questionDiv);
     });
 }
-
-
 function createQuestionDiv(questionId, questionData) {
     const questionDiv = document.createElement('div');
     questionDiv.classList.add('question');
@@ -55,19 +66,21 @@ function createQuestionDiv(questionId, questionData) {
       <button onclick="answer(this, '${questionId}')">Answer</button>
     `;
     questionDiv.setAttribute('data-question-id', questionId);
-
+  
     const answersSummary = questionDiv.querySelector('.answers-summary');
     const answersBlock = questionDiv.querySelector('.answers');
-
+  
     answersSummary.addEventListener('click', () => {
         answersBlock.style.display = (answersBlock.style.display === 'none') ? 'block' : 'none';
     });
-
+  
     return questionDiv;
-}
+  }
+  
+// ... (Rest of the code remains the same)
 
+// Function to ask a question
 async function ask() {
-    const username = document.getElementById('username').value;
     const questionText = document.getElementById('question').value;
     const fileInput = document.getElementById('file-input');
 
@@ -81,7 +94,7 @@ async function ask() {
             fileUrl = await storageRef.getDownloadURL();
         }
 
-      
+        // Check if the question already exists
         const existingQuestions = document.querySelectorAll('.question');
         const questionExists = Array.from(existingQuestions).some((question) => {
             const questionUsername = question.querySelector('strong').innerText;
@@ -104,8 +117,7 @@ async function ask() {
             const questionDiv = createQuestionDiv(newQuestionId, newQuestionData);
             document.getElementById('questions-list').appendChild(questionDiv);
 
-    
-            document.getElementById('username').value = '';
+            // Clear input fields after asking
             document.getElementById('question').value = '';
             fileInput.value = ''; // Clear file input
         } else {
@@ -114,27 +126,17 @@ async function ask() {
     }
 }
 
-
-
+// Function to answer a question
 async function answer(button, questionId) {
-    console.log('Answer function started');
-
     const answerInput = button.parentNode.querySelector('.answer-input');
     const answerText = answerInput ? answerInput.value.trim() : '';
 
-
+    // Assuming you have a file input associated with each question
     const fileInput = button.parentNode.querySelector('.file-input');
     const file = fileInput ? fileInput.files[0] : null;
 
-    console.log('Answer text:', answerText);
-
-    const username = prompt("Enter your name:");
-
-    console.log('Username entered:', username);
-
-    if (answerText && username) {
+    if (answerText) {
         try {
-            // Assuming Firestore function returns a promise
             await addAnswerToFirestore(questionId, username, answerText, file);
             // Reset input fields after successfully adding the answer
             answerInput.value = '';
@@ -143,38 +145,37 @@ async function answer(button, questionId) {
             console.error('Error adding answer to Firestore:', error);
         }
     }
-
-    console.log('Answer function completed');
 }
-
 async function addAnswerToFirestore(questionId, username, answerText, file) {
     const questionRef = db.collection('questions').doc(questionId);
     const answersArray = await questionRef.get().then(doc => doc.data().answers);
-
+  
     const answer = {
         username,
         answer: answerText,
-        fileUrl: null, 
+        fileUrl: null, // You can update this if you want to handle file attachments for answers
     };
-
+  
     if (file) {
-
+        // Handle file upload for answers here if needed
         answer.fileUrl = await uploadFile(file);
     }
-
+  
     answersArray.push(answer);
-
+  
     await questionRef.update({
         answers: answersArray,
     });
     fetchQuestions();
-}
-
-async function uploadFile(file) {
+  }
+  
+  async function uploadFile(file) {
     if (file) {
         const storageRef = firebase.storage().ref('uploads/' + file.name);
         await storageRef.put(file);
         return await storageRef.getDownloadURL();
     }
     return null;
-}
+  }
+  
+
