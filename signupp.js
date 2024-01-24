@@ -73,13 +73,20 @@ function signUp() {
      console.log("user signed up",user);
         alert('You have successfully signed up!');
       })
-      .catch((error) => {
-        // Handle errors
+     .catch((error) => {
+     
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.error('Sign-up error:', errorCode, errorMessage);
-      });
-  }
+
+        if (errorCode === 'auth/email-already-in-use') {
+            
+            alert('The email address is already in use. Please sign in or use a different email address.');
+        } else {
+       
+            console.error('Sign-up error:', errorCode, errorMessage);
+        }
+    });
+}
   
 // Function to sign in with Google
 window.signInWithGoogle = function () {
