@@ -17,7 +17,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
- // ... Your existing code
+
 
 function mySendPasswordResetEmail() {
     console.log("Inside sendPasswordResetEmail function");
@@ -32,6 +32,6 @@ function mySendPasswordResetEmail() {
       });
   }
   
-  // Add an event listener to the button
+
   document.getElementById('resetPasswordButton').addEventListener('click', mySendPasswordResetEmail);
   
