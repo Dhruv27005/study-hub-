@@ -92,7 +92,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 26px 44px; /* Corrected padding */
+  padding: 26px 44px; 
   font-size: 15px;
   margin-left: 138px;
   margin-top: -43px;
@@ -112,15 +112,15 @@
 /* adding some extra css to nav bar */
   
 .navbar {
-  background: linear-gradient(to right, #343a40, #2c5282); /* Adjust colors as desired */
+  background: linear-gradient(to right, #343a40, #2c5282); 
 }
 .navbar-nav .nav-link:hover {
-  color: #ff0000; /* Adjust color and add animations as desired */
-  text-shadow: 0 0 5px rgba(255, 0, 0, 0.5); /* Example animation */
+  color: #ff0000;
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.5); 
 }
 .btn-danger:hover {
   background-color: #a52a35;
-  box-shadow: 0 0 5px rgba(205, 42, 53, 0.5); /* Example animation */
+  box-shadow: 0 0 5px rgba(205, 42, 53, 0.5); 
 }
 .navbar-brand,
 .navbar-nav .nav-link {
@@ -130,85 +130,84 @@
 /* some more extra css */
 /* Overall navbar styling */
 .navbar {
-  background-image: linear-gradient(to right, #343a40, #2c5282); /* Gradient background */
-  padding: 10px 0; /* Add some padding for vertical spacing */
-  border-radius: 10px; /* Soften the edges */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+  background-image: linear-gradient(to right, #343a40, #2c5282);
+  padding: 10px 0; 
+  border-radius: 10px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); 
 }
 
-/* Navbar elements spacing */
+
 .navbar-brand {
   margin-right: 1rem;
 }
 
 .navbar-nav .nav-item {
-  margin-right: 1.5rem; /* Adjust for desired spacing */
+  margin-right: 1.5rem; 
 }
 
 /* Hover effects and animations */
 .navbar-nav .nav-link:hover {
   color: #ff0000; /* Red on hover */
-  text-shadow: 0 0 5px rgba(255, 0, 0, 0.5); /* Glow effect */
-  transform: translateY(-2px); /* Subtle upward movement */
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.5); 
+  transform: translateY(-2px);
 }
 
 .btn-danger:hover {
   background-color: #a52a35;
-  box-shadow: 0 0 5px rgba(205, 42, 53, 0.5); /* Glow effect */
-  transform: translateY(-2px); /* Subtle upward movement */
+  box-shadow: 0 0 5px rgba(205, 42, 53, 0.5); 
+  transform: translateY(-2px);
 }
 
 /* Additional styling */
 .navbar-brand,
 .navbar-nav .nav-link {
   font-family: 'Roboto Slab', sans-serif;
-  text-transform: uppercase; /* Capitalize links for bolder look */
-  letter-spacing: 1px; /* Slightly spread out letters */
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
 }
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
   .navbar-brand {
-    font-size: 1.2rem; /* Reduce brand name size */
+    font-size: 1.2rem; 
   }
 
   .navbar-nav .nav-item {
-    margin-right: 1rem; /* Reduce spacing between elements */
+    margin-right: 1rem; 
   }
 }
 
-/* adding some extra css */
-/* Add these styles to your existing CSS file or create a new one */
 
-/* Style for the container of the buttons */
+
+
 .carousel-buttons-container {
-  position: fixed; /* You can also use "absolute" if you want it relative to a specific container */
+  position: fixed; 
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1000; /* Adjust the z-index based on your layout */
+  z-index: 1000; 
 }
 
-/* Style for the individual buttons */
+
 .carousel-button {
   margin: 0 5px;
   cursor: pointer;
 }
 
-/* Add an "active" style for the active button */
+
 .carousel-button.active {
-  background-color: #007bff; /* Adjust the background color for the active button */
-  color: #fff; /* Adjust the text color for the active button */
+  background-color: #007bff; 
+  color: #fff; 
 }
 
-/* Override Bootstrap carousel styles to allow images to move */
+
 .carousel-inner {
   width: 100%;
   overflow: hidden;
 }
 
 .carousel-item {
-  transition: transform 0.6s ease; /* Adjust the transition duration if needed */
+  transition: transform 0.6s ease; 
 }
 
 #username a{
