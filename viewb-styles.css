@@ -1,0 +1,109 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('./bc.jpg') no-repeat center center fixed;
+    background-size: cover;
+    perspective: 1000px;
+}
+
+#navbar {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 23px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    color: #fff;
+    text-align: center;
+}
+
+#navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 85px;
+    font-size: 20px;
+    font-weight: bolder;
+    transition: 0.3s;
+    padding: 5px 10px;
+    border-radius: 25px;
+}
+
+#navbar a:hover {
+    background-color: white;
+    color: black;
+    font-size: 22px;
+}
+
+#app {
+    width: 70%;
+    margin: 0 auto; /* Center the container */
+    background-color: white;
+    padding: 20px;
+    border-radius: 74px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(0, 255, 0, 0.7);
+}
+
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+#blogs-list {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+.blog {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.blog img {
+    width: 40%;
+    height: auto;
+    float: left;
+    margin-right: 10px; /* Adjust as needed */
+    border-radius: 8px;
+}
+
+.blog-content {
+    overflow: hidden;
+}
+
+.blog p {
+    font-size: 20px; /* Adjust the font size as needed */
+    margin: 0; /* Remove default margin to make text cover the entire width */
+    white-space: normal; 
+}
+
+.auther{
+    margin: 10px;
+    position: relative;
+    left: 740px;
+    font-size: 20px;
+}
+
+.file-input {
+    margin-top: 5px;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    input,
+    textarea,
+    button {
+        width: 100%;
+    }
+
+    .blog img {
+        width: 100%;
+        float: none;
+        margin-right: 0;
+    }
+}
+

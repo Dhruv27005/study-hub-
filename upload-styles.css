@@ -1,0 +1,109 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('./bc.jpg') no-repeat center center fixed;
+    background-size: cover;
+    perspective: 1000px;
+}
+
+#navbar {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 23px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    color: #fff;
+    text-align: center;
+}
+
+#navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 85px;
+    font-size: 20px;
+    font-weight: bolder;
+    transition: 0.3s;
+    padding: 5px 10px;
+    border-radius: 25px;
+}
+
+#navbar a:hover {
+    background-color: white;
+    color: black;
+    font-size: 22px;
+}
+
+#app {
+    max-width: 800px;
+    margin: 60px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 84px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(0, 255, 0, 0.7);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+#blog-form {
+    margin-bottom: 20px;
+  
+    height: 339px;
+}
+
+input,
+textarea,
+button {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 34px;
+    border-radius: 20px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+button:hover {
+    background-color: white;
+    border: 3px solid #4caf50;
+    color: #4caf50;
+    font-weight: bolder;
+}
+
+#blogs-list {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+.blog {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.file-input {
+    margin-top: 5px;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    input,
+    textarea,
+    button {
+        width: 100%;
+    }
+}

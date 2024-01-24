@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Blog</title>
+    <link rel="stylesheet" href="upload-styles.css">
+</head>
+
+<body>
+    <div id="navbar">
+        <a href="./home.html">Home</a>
+        <a href="about2.html">About</a>
+        <a href="./view_blog.html">View Blogs</a>
+    </div>
+    <div id="app">
+        <h1>Upload Blog</h1>
+
+        <div id="blog-form">
+            <input type="text" id="author" placeholder="Your name">
+            <input type="text" id="title" placeholder="Blog title">
+            <textarea id="content" placeholder="Write your blog"></textarea>
+            <input type="file" class="file-input" accept="image/*, .pdf, .doc, .docx" id="file-input">
+            <button onclick="publishBlog()">Publish</button>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-storage.js"></script>
+    <script src="upload_blog.js"></script>
+</body>
+
+</html>

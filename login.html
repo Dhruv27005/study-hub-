@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous">
+      <style>
+        body {
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 20px;
+            margin-top: 50px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            color: #555555;
+        }
+
+        .form-control {
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        #exampleInputPassword2 {
+            border-radius: 0;
+            border-bottom-right-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .btn-outline-secondary, .btn-primary {
+            border-radius: 8px;
+            height: 38px; /* Adjust the height as needed */
+        }
+
+        .btn-primary {
+            background-color: #4285f4;
+            border-color: #4285f4;
+            width: 100%; /* Make the button full width */
+        }
+
+        #form-link {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 14px;
+            color: #555555;
+        }
+
+        .link {
+            color: #4285f4;
+            text-decoration: none;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="modal-body">
+        <div class="container my-5">
+          <form id="loginForm">
+            <!-- Email input -->
+            <div class="mb-3">
+              <label for="exampleInputEmail2" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail2" required aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+        
+            <!-- Password input -->
+            <div class="mb-3">
+              <label for="exampleInputPassword2" class="form-label">Password</label>
+              <div class="input-group">
+                <input type="password" class="form-control" id="exampleInputPassword2" required>
+                <button type="button" class="btn btn-outline-secondary" id="toggleLoginPasswordButton" onclick="togglePassword('exampleInputPassword2')">Show Password</button>
+              </div>
+            </div>
+        
+            <!-- Login button -->
+            <button type="button" class="btn btn-primary" id="loginButton" onclick="logIn()">Login</button>
+            <div id="form-link"><span><a href="forgot.html" class="link signup-link">forgot password?</a></span></div>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+<br>
+
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+   <script type="module" src="login.js"></script>
+</body>
+</html>

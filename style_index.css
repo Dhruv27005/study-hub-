@@ -1,0 +1,372 @@
+#navbar {
+    position: relative;
+  }
+  
+  #userProfileIcons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  #unsignedIcon,
+  #signedIcon {
+    width: 30px; 
+    height: 30px; 
+    margin-right: 10px; 
+  }
+  
+ 
+.navbar {
+    background-color: #343a40; 
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem; 
+  }
+  
+  .navbar-nav {
+    margin-left: auto;
+  }
+  
+
+  .navbar-nav .nav-item {
+    margin-right: 10px; 
+  }
+  
+  .navbar-nav .nav-link {
+    color: #ffffff; 
+    font-weight: bold;
+    transition: color 0.3s ease; 
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #ff0000;
+  }
+  
+  
+  .form-control {
+    margin-right: 10px; 
+  }
+  
+
+  .btn-danger {
+    background-color: #dc3545;
+    border: none;
+    transition: background-color 0.3s ease; 
+  }
+  
+  .btn-danger:hover {
+    background-color: #a52a35; 
+  }
+ 
+.navbar-nav .nav-item label.btn {
+    cursor: pointer;
+  }
+  
+ 
+  .navbar-nav .nav-item {
+    margin-right: 10px;
+  }
+  
+
+  .navbar-nav .nav-item.active {
+    background-color: #343a40; 
+    color: #ffffff; 
+  }
+  
+
+  #fileInput {
+    display: none;
+  }
+  #googleSignIn {
+    margin-left: 10px;
+}
+
+#googleSignIn {
+  background-color: #4285f4;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 26px 44px; /* Corrected padding */
+  font-size: 15px;
+  margin-left: 138px;
+  margin-top: -43px;
+  width: 185px;
+  height: 42px;
+}
+
+#googleSignIn:hover {
+  background-color: #3b79d6; 
+}
+
+#googleSignIn .icon {
+  margin-right: 8px;
+  font-size: 21px;
+  margin-bottom: -5px;
+}
+/* adding some extra css to nav bar */
+  
+.navbar {
+  background: linear-gradient(to right, #343a40, #2c5282); /* Adjust colors as desired */
+}
+.navbar-nav .nav-link:hover {
+  color: #ff0000; /* Adjust color and add animations as desired */
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.5); /* Example animation */
+}
+.btn-danger:hover {
+  background-color: #a52a35;
+  box-shadow: 0 0 5px rgba(205, 42, 53, 0.5); /* Example animation */
+}
+.navbar-brand,
+.navbar-nav .nav-link {
+  font-family: 'Roboto Slab', sans-serif;
+}
+
+/* some more extra css */
+/* Overall navbar styling */
+.navbar {
+  background-image: linear-gradient(to right, #343a40, #2c5282); /* Gradient background */
+  padding: 10px 0; /* Add some padding for vertical spacing */
+  border-radius: 10px; /* Soften the edges */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+}
+
+/* Navbar elements spacing */
+.navbar-brand {
+  margin-right: 1rem;
+}
+
+.navbar-nav .nav-item {
+  margin-right: 1.5rem; /* Adjust for desired spacing */
+}
+
+/* Hover effects and animations */
+.navbar-nav .nav-link:hover {
+  color: #ff0000; /* Red on hover */
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.5); /* Glow effect */
+  transform: translateY(-2px); /* Subtle upward movement */
+}
+
+.btn-danger:hover {
+  background-color: #a52a35;
+  box-shadow: 0 0 5px rgba(205, 42, 53, 0.5); /* Glow effect */
+  transform: translateY(-2px); /* Subtle upward movement */
+}
+
+/* Additional styling */
+.navbar-brand,
+.navbar-nav .nav-link {
+  font-family: 'Roboto Slab', sans-serif;
+  text-transform: uppercase; /* Capitalize links for bolder look */
+  letter-spacing: 1px; /* Slightly spread out letters */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.2rem; /* Reduce brand name size */
+  }
+
+  .navbar-nav .nav-item {
+    margin-right: 1rem; /* Reduce spacing between elements */
+  }
+}
+
+/* adding some extra css */
+/* Add these styles to your existing CSS file or create a new one */
+
+/* Style for the container of the buttons */
+.carousel-buttons-container {
+  position: fixed; /* You can also use "absolute" if you want it relative to a specific container */
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000; /* Adjust the z-index based on your layout */
+}
+
+/* Style for the individual buttons */
+.carousel-button {
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+/* Add an "active" style for the active button */
+.carousel-button.active {
+  background-color: #007bff; /* Adjust the background color for the active button */
+  color: #fff; /* Adjust the text color for the active button */
+}
+
+/* Override Bootstrap carousel styles to allow images to move */
+.carousel-inner {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-item {
+  transition: transform 0.6s ease; /* Adjust the transition duration if needed */
+}
+
+#username a{
+  padding: 0px 0px;
+  margin: 0px 0px;
+}
+
+.search{
+  height: 30px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  padding: 22px 12px !important;
+  background-color: #fff !important;
+  border-radius: 30px !important;
+  align-items: center !important;
+  box-shadow: 0 10px 25px rgb(245, 244, 244);
+  position: relative;
+  left: 20px;
+}
+
+.search:hover input{
+    width: 300px !important;
+}
+
+.search input{
+  width: 0 !important;
+  outline: none !important;
+  border: none !important;
+  font-weight: 500 !important;
+  transition: 0.3s !important;
+  background: transparent !important;
+}
+
+.sign1{
+  margin: 0px 5px !important;
+}
+#signupButton{
+ transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+ box-shadow: 0 0 5px rgba(254, 252, 253, 0.5);
+}
+/* signupButton:hover{
+  background-color: white important!;
+  text-overflow: ellipsis;
+} */
+@media (max-width: 768px) {
+  .carousel-buttons-container {
+    bottom: 5px; /* Adjust the bottom spacing as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Make the container full width */
+  }
+
+  .carousel-button {
+    margin: 0 5px;
+    cursor: pointer;
+    background-color: #007bff; /* Adjust the background color */
+    color: #fff; /* Adjust the text color */
+    padding: 5px 10px; /* Adjust padding as needed */
+    border-radius: 5px; /* Adjust border-radius as needed */
+  }
+
+  .carousel-button.active {
+    background-color: #0056b3; /* Adjust the active background color */
+  }
+}
+/* some responsiveness */
+  /* Your existing CSS code */
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar-nav .nav-item {
+    margin-right: 1rem;
+  }
+
+  #googleSignIn {
+    margin-left: 0; /* Adjust the margin for the Google Sign-In button */
+    margin-top: 10px; /* Add some top margin for spacing */
+  }
+
+  /* Adjust the padding and font-size for the search input */
+  .search input {
+    width: 150px; /* Adjust the initial width */
+    font-size: 12px;
+  }
+
+  /* Add styles to make the login button responsive */
+  #signupButton {
+    margin: 5px 0; /* Add margin for spacing */
+    width: 100%; /* Make the button full width */
+  }
+
+  /* Adjust the margin for the username search */
+  #username {
+    margin-left: 10px;
+  }
+
+  /* Add some margin to the container of the carousel buttons */
+  .carousel-buttons-container {
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px; /* Add top margin for spacing */
+  }
+
+  /* Adjust the styling of the carousel buttons for smaller screens */
+  .carousel-button {
+    margin: 0 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px; /* Adjust font size */
+  }
+
+  .carousel-button.active {
+    background-color: #0056b3;
+  }
+}
+/* Style for the container of the buttons */
+.carousel-buttons-container {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Style for the individual buttons */
+.carousel-button {
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+/* Add an "active" style for the active button */
+.carousel-button.active {
+  background-color: #007bff;
+  color: #fff;
+}
+/* #placeicon{
+margin-left: 60px !important;
+margin-top: 10px ;
+} */
+.list-inline {
+  padding-left: 324px;
+  list-style: none;
+}
