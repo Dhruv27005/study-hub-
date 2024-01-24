@@ -81,7 +81,7 @@ async function ask() {
             fileUrl = await storageRef.getDownloadURL();
         }
 
-        // Check if the question already exists
+      
         const existingQuestions = document.querySelectorAll('.question');
         const questionExists = Array.from(existingQuestions).some((question) => {
             const questionUsername = question.querySelector('strong').innerText;
@@ -104,7 +104,7 @@ async function ask() {
             const questionDiv = createQuestionDiv(newQuestionId, newQuestionData);
             document.getElementById('questions-list').appendChild(questionDiv);
 
-            // Clear input fields after asking
+    
             document.getElementById('username').value = '';
             document.getElementById('question').value = '';
             fileInput.value = ''; // Clear file input
@@ -122,7 +122,7 @@ async function answer(button, questionId) {
     const answerInput = button.parentNode.querySelector('.answer-input');
     const answerText = answerInput ? answerInput.value.trim() : '';
 
-    // Assuming you have a file input associated with each question
+
     const fileInput = button.parentNode.querySelector('.file-input');
     const file = fileInput ? fileInput.files[0] : null;
 
@@ -154,11 +154,11 @@ async function addAnswerToFirestore(questionId, username, answerText, file) {
     const answer = {
         username,
         answer: answerText,
-        fileUrl: null, // You can update this if you want to handle file attachments for answers
+        fileUrl: null, 
     };
 
     if (file) {
-        // Handle file upload for answers here if needed
+
         answer.fileUrl = await uploadFile(file);
     }
 
