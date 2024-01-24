@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-storage.js"></script>
+
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            margin: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+
+      
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+
+.social-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-icons a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+}
+
+
+.waves {
+  position: relative;
+  height: 15px;
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 200%;
+  background: linear-gradient(to right, #333 50%, transparent 50%);
+  animation: waveAnimation 2s linear infinite;
+}
+
+@keyframes waveAnimation {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 10px;
+}
+
+.menu_item {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.menu_link {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+.waves #wave1 {
+  animation-duration: 3s;
+}
+
+.waves #wave2 {
+  animation-duration: 4s;
+}
+
+.waves #wave3 {
+  animation-duration: 5s;
+}
+
+.waves #wave4 {
+  animation-duration: 6s;
+}
+
+    </style>
+  
+</head>
+   
+<body>
+
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+
+    <section>
+        <h2>Get in Touch</h2>
+        <p>Feel free to reach out to us with any questions, feedback, or concerns. We'll get back to you as soon as
+            possible.</p>
+
+            <form action="#" method="post" id="contactForm">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+
+    <script type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script
+    nomodulesrc="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+
+   
+
+<script type="module">
+
+
+
+// Your Firebase configuration
+const firebaseConfig = {
+  apiKey: 'AIzaSyB2SrD9CDZwYwfIepRs-RKHJI_lxIkhyxU',
+  authDomain: 'firbasebasics-656db.firebaseapp.com',
+  projectId: 'firbasebasics-656db',
+  storageBucket: 'firbasebasics-656db.appspot.com',
+  messagingSenderId: '578521796858',
+  appId: '1:578521796858:web:036b3b72da2c9f85e23943'
+};
+
+
+// Initialize Firebase app
+// const app = initializeApp(firebaseConfig);
+// const db = firebase.firestore();
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+// Get form elements
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const messageInput = document.getElementById("message");
+const contactForm = document.getElementById("contactForm");
+
+// Handle form submission
+contactForm.addEventListener("submit", (event) => {
+  event.preventDefault(); // Prevent default form submission
+
+  const name = nameInput.value;
+  const email = emailInput.value;
+  const message = messageInput.value;
+
+
+  const timestamp = firebase.firestore.FieldValue.serverTimestamp();
+
+
+  db.collection("messages").add({
+    name,
+    email,
+    message,
+    timestamp,
+  })
+    .then(() => {
+      //  to Clear form 
+      nameInput.value = "";
+      emailInput.value = "";
+      messageInput.value = "";
+
+    
+      alert("Message submitted successfully!");
+    
+    })
+    .catch((error) => {
+      
+      console.error("Error adding document:", error);
+      alert("An error occurred while submitting the message. Please try again.");
+    });
+});
+</script>
+
+  
+
+
+
+    <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-6">
+              <ul class="list-inline social-icons">
+                <li class="list-inline-item">
+                  <a href="#" class="text-white"><ion-icon name="logo-facebook"></ion-icon></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#" class="text-white"><ion-icon name="logo-twitter"></ion-icon></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://www.linkedin.com/in/dhruv-agrawal" class="text-white"><ion-icon name="logo-linkedin"></ion-icon></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#" class="text-white"><ion-icon name="logo-instagram"></ion-icon></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <footer class="footer">
+        <div class="waves">
+          <div class="wave" id="wave1"></div>
+          <div class="wave" id="wave2"></div>
+          <div class="wave" id="wave3"></div>
+          <div class="wave" id="wave4"></div>
+        </div>
+        <ul class="menu">
+          <li class="menu_item"><a class="menu_link" href="home.html">Home</a></li>
+          <li class="menu_item"><a class="menu_link" href="about2.html">About</a></li>
+          <li class="menu_item"><a class="menu_link" href="#">Services</a></li>
+          <li class="menu_item"><a class="menu_link" href="team2.html">Team</a></li>
+          <li class="menu_item"><a class="menu_link" href="#">Contact</a></li>
+        </ul>
+        <p>&copy;2023 Study Hub. All Rights Reserved.</p>
+      </footer>
+
+
+</body>
+
+</html>
