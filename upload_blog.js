@@ -1,4 +1,4 @@
-// upload.js
+
 
 const firebaseConfig = {
    
@@ -14,9 +14,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     // Logic specific to the upload page (if any)
-// });
+
 
 async function publishBlog() {
     const author = document.getElementById('author').value;
@@ -45,12 +43,11 @@ async function publishBlog() {
         const newBlogData = newBlogDoc.data();
         const newBlogId = newBlogDoc.id;
 
-        // Additional logic specific to the upload page (if any)
-
-        // Clear input fields after publishing
+       
+       
         document.getElementById('author').value = '';
         document.getElementById('title').value = '';
         document.getElementById('content').value = '';
-        fileInput.value = ''; // Clear file input
+        fileInput.value = ''; 
     }
 }
