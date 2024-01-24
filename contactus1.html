@@ -199,7 +199,7 @@
 
 
 
-// Your Firebase configuration
+
 const firebaseConfig = {
   apiKey: 'AIzaSyB2SrD9CDZwYwfIepRs-RKHJI_lxIkhyxU',
   authDomain: 'firbasebasics-656db.firebaseapp.com',
@@ -210,18 +210,18 @@ const firebaseConfig = {
 };
 
 
-// Initialize Firebase app
-// const app = initializeApp(firebaseConfig);
-// const db = firebase.firestore();
+
+
+
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
-// Get form elements
+
 const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
 const messageInput = document.getElementById("message");
 const contactForm = document.getElementById("contactForm");
 
-// Handle form submission
+
 contactForm.addEventListener("submit", (event) => {
   event.preventDefault(); // Prevent default form submission
 
@@ -240,7 +240,7 @@ contactForm.addEventListener("submit", (event) => {
     timestamp,
   })
     .then(() => {
-      //  to Clear form 
+      
       nameInput.value = "";
       emailInput.value = "";
       messageInput.value = "";
