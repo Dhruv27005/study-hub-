@@ -25,7 +25,7 @@ function mySendPasswordResetEmail() {
     sendPasswordResetEmail(auth, resetEmail)
       .then(() => {
         alert('Password reset email sent. Check your inbox!');
-        window.location.href = ("./sigup_logind.html");
+        window.location.href = ("login.html");
       })
       .catch((error) => {
         console.error('Password reset error:', error.code, error.message);
