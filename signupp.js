@@ -78,12 +78,18 @@ function signUp() {
         const errorCode = error.code;
         const errorMessage = error.message;
 
-        if (errorCode === 'auth/email-already-in-use') {
-            
-            alert('The email address is already in use. Please sign in or use a different email address.');
+       if (errorCode === 'auth/email-already-in-use') {
+         
+          alert('The email address is already in use. Please sign in or use a different email address.');
+        } else if (errorCode === 'auth/invalid-email') {
+         
+          document.getElementById('emailError').textContent = 'Invalid email address. Please enter a valid email.';
+        } else if (errorCode === 'auth/weak-password') {
+       document.getElementById('weakpassword').textContent = 'Weak password. Password should be at least 6 characters.';
+          // alert('Weak password. Password should be at least 6 characters.');
         } else {
-       
-            console.error('Sign-up error:', errorCode, errorMessage);
+         
+          console.error('Sign-up error:', errorCode, errorMessage);
         }
     });
 }
