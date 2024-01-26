@@ -27,6 +27,7 @@
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
       <input type="email" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" autocomplete="username">
+      <small id="emailError" class="form-text text-danger"></small>
       <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
     </div>
 
@@ -38,6 +39,7 @@
     <input type="password" class="form-control mb-0" id="exampleInputPassword1" required autocomplete="new-password">
     <button type="button" class="btn btn-outline-secondary" id="togglePasswordButton" onclick="togglePassword('exampleInputPassword1')">Show Password</button>
   </div>
+   <small id="weakpassword" class="form-text text-danger"></small>
 </div>
 
     <!-- Confirm Password input -->
