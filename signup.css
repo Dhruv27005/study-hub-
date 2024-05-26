@@ -152,3 +152,10 @@ width: 201px;
   color: #8b8b8b;
   padding: 0 15px;
 }
+@media (max-width: 768px) {
+  #signupb,
+  #googleSignIn {
+    width: 100%;
+    margin-left: 0;
+  }
+}
